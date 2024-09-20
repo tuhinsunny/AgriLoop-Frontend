@@ -28,6 +28,7 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 11.8vh;
 }
 
 nav ul{
@@ -97,3 +98,102 @@ nav ul li:hover{
   }
 
   /* nav bar styling ends here */
+
+  /* search_section styling starts here */
+  .search_section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3.5px;
+    background-color: #EDF4F6;
+    height: 7vh;
+    gap: 25px;
+
+}
+
+.categories {
+    border: none;
+}
+
+.search_box input{
+    border: none;
+    padding: 2.4px;
+    min-width: 45vw;
+    min-height: 4vh;
+    border-radius: 60px;
+    padding-left: 15px;
+    outline: none;
+}
+
+.input-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.input-wrapper input {
+    padding-right: 40px; 
+}
+
+.input-icon {
+    position: absolute;
+    right: 0px; 
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px; 
+    height: 4vh; 
+    pointer-events: none;
+    
+}
+
+select{
+    border: none; 
+    padding: 5px;
+    min-width: auto;
+    min-height: 4vh;
+    border-radius: 60px;
+    outline: none;
+}
+
+.categories select {
+    background: url('image2/menus.png') no-repeat left center;
+    padding-left: 40px; 
+    background-size: 20px 20px; 
+    background-position: 10px center; 
+    background-color: white;
+}
+/* search_section styling ends here */
+
+/* hero styling starts here */
+.hero{
+    height: 59vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px;
+    padding-left: 14vw;
+}
+.left{
+    font-size: 2.5rem;
+    width: 170vw;
+    max-height: 70vh;
+}
+.right{
+    padding-left: 150px;
+    width: auto;
+}
+.discount{
+    background-color: #3cda5e2e;
+    border-radius: 60px;
+    padding: 10px;
+    font-size: 0.9rem;
+    padding-left: 17px;
+}
+.red{
+    color: red;
+    font-weight: bolder;
+}
+.hero_image{
+    height: 90%;
+    width: 90%
+}
+/* hero styling ends here */

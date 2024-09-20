@@ -197,3 +197,15 @@ select{
     width: 90%
 }
 /* hero styling ends here */
+.carousel{
+    max-height: 30vh;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.carousel-item img {
+    max-height: 30vh; /* Set a fixed height for the images */
+    width: 50%; /* Ensure the images take the full width of the container */
+    object-fit: cover; /* Ensure the images cover the specified height without distortion */
+}

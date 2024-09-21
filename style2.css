@@ -367,7 +367,6 @@ nav ul li:hover {
 .cardTrend{
     height: 35vh;
     width: 15vw;
-    border: 2px solid red;
     border-radius: 10px;
 }
 .cardTrend img{

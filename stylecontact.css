@@ -134,19 +134,24 @@ body {
 .button input[type="button"]:hover {
     background: #5029bc;
 }
-
+.out_faq{
+    height: 50vh;
+    width: 100%;
+    position: relative;
+    margin-top: 10vh;
+}
 .accordion .button{
     font-weight: bolder;
-    
+    position: relative;
 }
 
 .faq_container {
     margin: 20px;
     padding: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 22%;
 }
 @media (max-width: 950px) {
     .container {

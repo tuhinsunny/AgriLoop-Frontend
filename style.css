@@ -109,6 +109,10 @@ button {
     letter-spacing: 1.2px;
     font-size: .9em;
 }
+.nav_button button:hover {
+    background-color: #03979f;
+    transition: 0.2s ease-in;
+}
 
 /* nav bar styling ends here */
 

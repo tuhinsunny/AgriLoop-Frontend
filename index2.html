@@ -127,19 +127,19 @@
             <h3 style="font-weight: 600; ">Deal of the Week </h3>
             <div class="dealDays">
                 <div class="days">
-                    <p class="leadHead">15</p>
+                    <p class="leadHead" id="days">00</p>
                     <p>Days</p>
                 </div>
                 <div class="days">
-                    <p class="leadHead">17</p>
+                    <p class="leadHead" id="hours">00</p>
                     <p>Hours</p>
                 </div>
                 <div class="days">
-                    <p class="leadHead">57</p>
+                    <p class="leadHead" id="minutes">00</p>
                     <p>Minutes</p>
                 </div>
                 <div class="days">
-                    <p class="leadHead">21</p>
+                    <p class="leadHead" id="seconds">00</p>
                     <p>Seconds</p>
                 </div>
             </div>
@@ -377,6 +377,23 @@
                 }
             });
         });
+
+        var countdownDate = new Date("Sep 29, 2024 00:00:00").getTime();
+        var x = setInterval(function(){
+            var now = new Date().getTime();
+            var distance = countdownDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000); 
+
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+
+        },1000)
 
     </script>
 </body>

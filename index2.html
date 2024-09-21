@@ -17,6 +17,10 @@
 </head>
 
 <body>
+
+  <div id="preloader"></div>
+
+
     <header>
         <nav class="container">
             <div class="logo">
@@ -394,6 +398,12 @@
             document.getElementById("seconds").innerHTML = seconds;
 
         },1000)
+
+        // Preloader starts 
+        var loader = document.getElementById("preloader");
+        window.addEventListener("load", function () {
+            loader.style.display = "none";
+        });
 
     </script>
 </body>

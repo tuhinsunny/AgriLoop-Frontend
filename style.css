@@ -13,7 +13,14 @@ body {
     overflow-x: hidden;
     background-color: #016a70;
 }
-
+#preloader{
+    background: #000 url(image2/loader.gif) no-repeat center center;
+    background-size: 15%;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    z-index: 10000;
+}
 .component {
     position: fixed;
     z-index: 1000;

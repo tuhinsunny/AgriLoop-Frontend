@@ -11,6 +11,16 @@ body {
     line-height: 1.5;
     scroll-behavior: smooth;
 }
+    
+#preloader{
+    background: #000 url(image2/loader.gif) no-repeat center center;
+    background-size: 15%;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    z-index: 1000;
+
+}
 
 /* nav bar styling starts here */
 

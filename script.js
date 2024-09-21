@@ -38,3 +38,9 @@ const productOdometer = document.querySelector('.products-odometer');
 createOdometer(productOdometer, 70);
 const educationOdometer = document.querySelector('.education-odometer');
 createOdometer(educationOdometer, 100);
+
+// Preloader
+var loader = document.getElementById("preloader");
+window.addEventListener("load", function () {
+    loader.style.display = "none";
+});

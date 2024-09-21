@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriLoop: NGO Collaboration for Sustainable Waste Management</title>
+
+    <link rel="shortcut icon" href="favicon.png" type="image"> 
+
+
+    <style>
+        :root {
+            --primary-color: #006D77;
+            --secondary-color: #E29578;
+            --text-color: #333;
+            --bg-color: #EDF6F9;
+            --accent-color: #FFDDD2;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Green loader */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .loader div {
+            width: 50px;
+            height: 50px;
+            border: 5px solid var(--primary-color);
+            border-top: 5px solid var(--secondary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            width: 120px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .btn {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #d18469;
+            transform: scale(1.05);
+        }
+
+        .hero {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-button {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #d18469;
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cards {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            flex: 1 1 300px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            flex: 1 1 200px;
+            margin: 1rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+
+        .testimonial {
+            background-color: var(--accent-color);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        .testimonial-content {
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+        }
+
+        #contactForm {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #contactForm input,
+        #contactForm textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #contactForm button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #contactForm button:hover {
+            background-color: #005a62;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem; /* Slightly increased gap between cards */
+            flex-wrap: wrap;
+        }
+        
+        .image-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1rem; /* Moderate padding */
+            flex: 1 1 300px; /* Medium-sized flexbox width */
+            max-width: 320px; /* Set a moderate maximum width */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .image-card img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 0.75rem; /* Moderate margin below the image */
+        }
+        
+        .image-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .image-card p {
+            font-size: 1rem; /* Standard font size */
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        @media (max-width: 768px) {
+            .image-card {
+                flex: 1 1 250px; /* Slightly smaller size for mobile */
+                max-width: 270px;
+            }
+        }
+        
+        .animated-left {
+            float: left; /* Aligns the image to the left */
+            width: 250px; /* Medium size width */
+            margin-right: 30px; /* Space between the image and the content */
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .animated-right {
+            float: right; /* Aligns the image to the right */
+            width: 250px; /* Medium size width */
+            margin-left: 30px; /* Space between the image and the content */
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        /* Simple floating animation */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        
+        
+
+
+
+    </style>
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader">
+        <div></div>
+    </div>
+
+    <header class="header">
+        <div class="header-content">
+            <img src="favicon.ico" alt="AgriLoop Logo" class="logo">
+            <nav class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">About Us</a>
+                <a href="#">Services</a>
+                <a href="#">Partners</a>
+                <a href="#">Contact</a>
+            </nav>
+            <div>
+                <button class="btn">Login</button>
+                <button class="btn">Register</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="animated-images">
+            <img src="7934-removebg-preview.png" class="animated-left" alt="Left Image">
+            <div class="main-content">
+                <!-- Existing content (e.g. the heading and description) -->
+                <h1>NGO Collaboration: Cultivating a Waste-Free Future</h1>
+                <p>Join AgriLoop in revolutionizing India's approach to waste management...</p>
+                
+            </div>
+            <img src="19198360.png" class="animated-right" alt="Right Image">
+        </div>
+        
+
+
+        <button class="cta-button">Become a Partner</button>
+    </section>
+
+    <main class="main-content">
+        <section class="section">
+            <h2>Why Collaborate with AgriLoop?</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Sustainable Impact</h3>
+                    <p>Create lasting change in waste management practices and support local farmers.</p>
+                </div>
+                <div class="card">
+                    <h3>Innovative Technology</h3>
+                    <p>Access cutting-edge waste transformation technologies and data-driven insights.</p>
+                </div>
+                <div class="card">
+                    <h3>Community Engagement</h3>
+                    <p>Connect with a network of like-minded organizations and passionate individuals.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Our Impact</h2>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="200">0</div>
+                    <div class="stat-label">NGOs Collaborating</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="50000">0</div>
+                    <div class="stat-label">Farmers Supported</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="100">0</div>
+                    <div class="stat-label">Waste Recycled Monthly</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="30">0</div>
+                    <div class="stat-label">Reduction in Landfill Waste</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>How It Works</h2>
+            <ol>
+                <li>NGOs collect recyclable waste from communities and businesses</li>
+                <li>AgriLoop processes and transforms the waste into valuable agricultural resources</li>
+                <li>Farmers receive these resources at subsidized rates, improving crop yields</li>
+                <li>The cycle continues, creating a sustainable loop of waste management and agricultural support</li>
+            </ol>
+        </section>
+
+        <section class="section">
+            <h2>Partner Testimonial</h2>
+            <div class="testimonial">
+                <p class="testimonial-content">"Collaborating with AgriLoop has been a game-changer for our organization. We've seen a significant increase in community engagement and a measurable impact on local waste reduction. The resources provided to farmers have led to improved crop yields and economic growth in our region."</p>
+                <p class="testimonial-author">- Priya Sharma, Green Earth NGO</p>
+            </div>
+        </section>
+
+        <section class="section image-gallery">
+            <h2>Our previous  Collaborative Projects</h2>
+            <div class="image-container">
+                <div class="image-card">
+                    <img src="recycle_Image.png" alt="Project 1">
+                    <p>Project 1: Recycling Initiative</p>
+                </div>
+                <div class="image-card">
+                    <img src="Sustain.png" alt="Project 2">
+                    <p>Project 2: Sustainable Farming</p>
+                </div>
+                <div class="image-card">
+                    <img src="waste.png" alt="Project 3">
+                    <p>Project 3: Waste Management Workshop</p>
+                </div>
+            </div>
+        </section>
+        
+
+        <section class="section">
+            <h2>Join Our Mission</h2>
+            <form id="contactForm">
+                <input type="text" placeholder="Organization Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="tel" placeholder="Phone Number">
+                <textarea placeholder="How would you like to collaborate?" rows="4" required></textarea>
+                <button type="submit">Submit Interest</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 AgriLoop. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Loader display
+        window.addEventListener('load', function() {
+            document.querySelector('.loader').style.display = 'none';
+        });
+
+        // Number counting animation
+        document.addEventListener('DOMContentLoaded', function () {
+            const counters = document.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-count');
+                    const count = +counter.innerText;
+                    const increment = target / 200;
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + increment);
+                        setTimeout(updateCount, 10);
+                    } else {
+                        counter.innerText = target;
+                        counter.style.opacity = 1;
+                        counter.style.transform = 'translateY(0)';
+                    }
+                };
+                updateCount();
+            });
+        });
+
+        document.querySelector('.cta-button').addEventListener('click', function() {
+            document.getElementById('contactForm').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your interest! We will contact you soon with more information about our NGO collaboration program.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

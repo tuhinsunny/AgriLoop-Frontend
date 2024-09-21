@@ -16,7 +16,17 @@ body {
     justify-content: center;
     padding: 70px;
 }
-
+body::-webkit-scrollbar{
+    display: block;
+    width: 10px;
+    background-color:#5029bc ;
+    border: 1px solid #016a70;
+}
+body::-webkit-scrollbar-thumb{
+    background-color:#fff ;
+    border-radius: 50px;
+    border: 1px solid #016a70;
+}
 
 .container {
     width: 85%;

@@ -233,25 +233,21 @@ nav ul li:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 3.5px;
-    background-color: #EDF4F6;
-    height: 7vh;
-    gap: 25px;
-
+    padding: 1.3rem;
+    gap: 1rem;
+    background-color: #016a70;
 }
-
-.categories {
-    border: none;
+.categories{
+    border-radius: 60px;
+    outline: none;
 }
-
 .search_box input {
     border: none;
-    padding: 2.4px;
-    min-width: 45vw;
-    min-height: 4vh;
+    padding:  .4rem;
     border-radius: 60px;
     padding-left: 15px;
     outline: none;
+    width: 70vw;
 }
 
 .input-wrapper {
@@ -262,6 +258,11 @@ nav ul li:hover {
 .input-wrapper input {
     padding-right: 40px;
 }
+.input-wrapper img{
+    height: 37px;
+    width: 45px;
+}
+
 
 .input-icon {
     position: absolute;
@@ -270,13 +271,13 @@ nav ul li:hover {
     transform: translateY(-50%);
     width: 40px;
     height: 4vh;
-    pointer-events: none;
+    cursor: pointer;
 
 }
 
-select {
+.categories select {
     border: none;
-    padding: 5px;
+    padding: .6rem;
     min-width: auto;
     min-height: 4vh;
     border-radius: 60px;

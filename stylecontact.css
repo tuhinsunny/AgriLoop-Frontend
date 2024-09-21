@@ -17,6 +17,7 @@ body {
     padding: 70px;
 }
 
+
 .container {
     width: 85%;
     background: #fff;
@@ -139,6 +140,8 @@ body {
     width: 100%;
     position: relative;
     margin-top: 10vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 .accordion .button{
     font-weight: bolder;

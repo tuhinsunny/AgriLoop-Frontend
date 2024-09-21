@@ -5,6 +5,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+    /* How can i disable the scrobar in x direction? */
+    scrollbar-width: none;
 }
 
 body {
@@ -146,12 +148,10 @@ body::-webkit-scrollbar-thumb{
     background: #5029bc;
 }
 .out_faq{
-    height: 50vh;
+    height: 60vh;
     width: 100%;
     position: relative;
     margin-top: 10vh;
-    overflow-x: hidden;
-    overflow-y: hidden;
 }
 .accordion .button{
     font-weight: bolder;

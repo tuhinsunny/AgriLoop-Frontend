@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AgriLoop: NGO Collaboration for Sustainable Waste Management</title>
 
-    <link rel="shortcut icon" href="favicon.png" type="image"> 
+    <link rel="shortcut icon" href="favicon.png" type="image">
 
 
     <style>
@@ -17,7 +18,21 @@
             --accent-color: #FFDDD2;
         }
 
-        body, html {
+        body::-webkit-scrollbar {
+            display: block;
+            width: 10px;
+            background-color: #006d77;
+            border: 2px solid white;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background-color: #fff;
+            border: 2px solid white;
+            border-radius: 50px;
+        }
+
+        body,
+        html {
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -50,8 +65,13 @@
         }
 
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         .header {
@@ -261,78 +281,88 @@
         .image-container {
             display: flex;
             justify-content: center;
-            gap: 1.5rem; /* Slightly increased gap between cards */
+            gap: 1.5rem;
+            /* Slightly increased gap between cards */
             flex-wrap: wrap;
         }
-        
+
         .image-card {
             background-color: white;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 1rem; /* Moderate padding */
-            flex: 1 1 300px; /* Medium-sized flexbox width */
-            max-width: 320px; /* Set a moderate maximum width */
+            padding: 1rem;
+            /* Moderate padding */
+            flex: 1 1 300px;
+            /* Medium-sized flexbox width */
+            max-width: 320px;
+            /* Set a moderate maximum width */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
+
         .image-card img {
             max-width: 100%;
             border-radius: 8px;
-            margin-bottom: 0.75rem; /* Moderate margin below the image */
+            margin-bottom: 0.75rem;
+            /* Moderate margin below the image */
         }
-        
+
         .image-card:hover {
             transform: scale(1.05);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
-        
+
         .image-card p {
-            font-size: 1rem; /* Standard font size */
+            font-size: 1rem;
+            /* Standard font size */
             color: var(--primary-color);
             font-weight: 500;
         }
-        
+
         @media (max-width: 768px) {
             .image-card {
-                flex: 1 1 250px; /* Slightly smaller size for mobile */
+                flex: 1 1 250px;
+                /* Slightly smaller size for mobile */
                 max-width: 270px;
             }
         }
-        
+
         .animated-left {
-            float: left; /* Aligns the image to the left */
-            width: 250px; /* Medium size width */
-            margin-right: 30px; /* Space between the image and the content */
+            float: left;
+            /* Aligns the image to the left */
+            width: 250px;
+            /* Medium size width */
+            margin-right: 30px;
+            /* Space between the image and the content */
             animation: float 4s ease-in-out infinite;
         }
-        
+
         .animated-right {
-            float: right; /* Aligns the image to the right */
-            width: 250px; /* Medium size width */
-            margin-left: 30px; /* Space between the image and the content */
+            float: right;
+            /* Aligns the image to the right */
+            width: 250px;
+            /* Medium size width */
+            margin-left: 30px;
+            /* Space between the image and the content */
             animation: float 4s ease-in-out infinite;
         }
-        
+
         /* Simple floating animation */
         @keyframes float {
             0% {
                 transform: translateY(0px);
             }
+
             50% {
                 transform: translateY(-10px);
             }
+
             100% {
                 transform: translateY(0px);
             }
         }
-        
-        
-        
-
-
-
     </style>
 </head>
+
 <body>
     <!-- Loader -->
     <div class="loader">
@@ -363,11 +393,11 @@
                 <!-- Existing content (e.g. the heading and description) -->
                 <h1>NGO Collaboration: Cultivating a Waste-Free Future</h1>
                 <p>Join AgriLoop in revolutionizing India's approach to waste management...</p>
-                
+
             </div>
             <img src="19198360.png" class="animated-right" alt="Right Image">
         </div>
-        
+
 
 
         <button class="cta-button">Become a Partner</button>
@@ -427,13 +457,16 @@
         <section class="section">
             <h2>Partner Testimonial</h2>
             <div class="testimonial">
-                <p class="testimonial-content">"Collaborating with AgriLoop has been a game-changer for our organization. We've seen a significant increase in community engagement and a measurable impact on local waste reduction. The resources provided to farmers have led to improved crop yields and economic growth in our region."</p>
+                <p class="testimonial-content">"Collaborating with AgriLoop has been a game-changer for our
+                    organization. We've seen a significant increase in community engagement and a measurable impact on
+                    local waste reduction. The resources provided to farmers have led to improved crop yields and
+                    economic growth in our region."</p>
                 <p class="testimonial-author">- Priya Sharma, Green Earth NGO</p>
             </div>
         </section>
 
         <section class="section image-gallery">
-            <h2>Our previous  Collaborative Projects</h2>
+            <h2>Our previous Collaborative Projects</h2>
             <div class="image-container">
                 <div class="image-card">
                     <img src="recycle_Image.png" alt="Project 1">
@@ -449,7 +482,7 @@
                 </div>
             </div>
         </section>
-        
+
 
         <section class="section">
             <h2>Join Our Mission</h2>
@@ -469,7 +502,7 @@
 
     <script>
         // Loader display
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
             document.querySelector('.loader').style.display = 'none';
         });
 
@@ -495,15 +528,16 @@
             });
         });
 
-        document.querySelector('.cta-button').addEventListener('click', function() {
+        document.querySelector('.cta-button').addEventListener('click', function () {
             document.getElementById('contactForm').scrollIntoView({ behavior: 'smooth' });
         });
 
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
             e.preventDefault();
             alert('Thank you for your interest! We will contact you soon with more information about our NGO collaboration program.');
             this.reset();
         });
     </script>
 </body>
+
 </html>

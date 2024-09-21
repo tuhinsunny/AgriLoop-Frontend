@@ -11,6 +11,17 @@ body {
     line-height: 1.5;
     scroll-behavior: smooth;
 }
+body::-webkit-scrollbar{
+    display: block;
+    width: 10px;
+    background-color:#b1f100 ;
+    border: 1px solid #016a70;
+}
+body::-webkit-scrollbar-thumb{
+    background-color:#fff ;
+    border-radius: 50px;
+    border: 1px solid #016a70;
+}
     
 #preloader{
     background: #000 url(image2/loader.gif) no-repeat center center;

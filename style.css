@@ -447,7 +447,14 @@ button {
 
 /* Members Section Starts  */
 
-.members-section {
+
+.stat{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stats-container{
     background-color: white;
     height: 30vh;
     width: 100%;
@@ -457,10 +464,20 @@ button {
     gap: 5vw;
 }
 
-.inner-members {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.odometer.plus{
+    position: relative;
+}
+.odometer.plus::after{
+    content: "+";
+    position: absolute;
+    top: 0;
+    right: -.7rem;
+    font-weight: 700;
+}
+.odometer {
+    transform: scale(2); 
+    font-weight: 700;
+    margin-bottom: 1rem;
 }
 
 /* Members Section Ends */

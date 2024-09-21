@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AgriLoop</title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.7/themes/odometer-theme-default.css"
+        integrity="sha512-kMPqFnKueEwgQFzXLEEl671aHhQqrZLS5IP3HzqdfozaST/EgU+/wkM07JCmXFAt9GO810I//8DBonsJUzGQsQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
@@ -136,24 +141,43 @@
 
     <!-- Hero Section Ends  -->
 
-    <div class="members-section">
-        <div class="inner-members">
-            <h1>200+</h1>
-            <h2>Members</h2>
+    <!-- Odometer -> Members section Starts  -->
+    <div class="stats-container">
+        <div class="stat">
+            <div class="members-odometer odometer plus">
+                <h1>0</h1>
+            </div>
+            <div class="type">
+                <h2>Members</h2>
+            </div>
         </div>
-        <div class="inner-members">
-            <h1>20</h1>
-            <h2>Waste Bank</h2>
+        <div class="stat">
+            <div class="waste-odometer odometer">
+                <h1>0</h1>
+            </div>
+            <div class="type">
+                <h2>Waste Bank</h2>
+            </div>
         </div>
-        <div class="inner-members">
-            <h1>50+</h1>
-            <h2>Products</h2>
+        <div class="stat">
+            <div class="products-odometer odometer plus">
+                <h1>0</h1>
+            </div>
+            <div class="type">
+                <h2>Products</h2>
+            </div>
         </div>
-        <div class="inner-members">
-            <h1>150</h1>
-            <h2>Course Education</h2>
+        <div class="stat">
+            <div class="education-odometer odometer">
+                <h1>0</h1>
+            </div>
+            <div class="type">
+                <h2>Course Education</h2>
+            </div>
         </div>
     </div>
+
+    <!-- Odometer -> Members section Ends  -->
 
     <!-- About Us Section  -->
     <hr>
@@ -263,6 +287,9 @@
 
     <!-- Footer Section Ends  -->
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.7/odometer.min.js"
+        integrity="sha512-v3fZyWIk7kh9yGNQZf1SnSjIxjAKsYbg6UQ+B+QxAZqJQLrN3jMjrdNwcxV6tis6S0s1xyVDZrDz9UoRLfRpWw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="script.js"></script>
 </body>
 

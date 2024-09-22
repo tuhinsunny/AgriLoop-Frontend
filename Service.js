@@ -196,17 +196,33 @@ window.onload = function() {
     canvas.height = video.videoHeight;
     const context = canvas.getContext('2d');
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
-    const imageDataUrl = canvas.toDataURL('image/png');
+    
+    const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+    const data = imageData.data;
+    const rgbCanvas = document.createElement('canvas');
+    rgbCanvas.width = canvas.width;
+    rgbCanvas.height = canvas.height;
+    const rgbContext = rgbCanvas.getContext('2d');
+    const rgbImageData = rgbContext.createImageData(canvas.width, canvas.height);
+    const rgbData = rgbImageData.data;
+
+    for (let i = 0; i < data.length; i += 4) {
+        rgbData[i] = data[i];       // R
+        rgbData[i + 1] = data[i + 1]; // G
+        rgbData[i + 2] = data[i + 2]; // B
+        rgbData[i + 3] = 255;       // A (fully opaque)
+    }
+    rgbContext.putImageData(rgbImageData, 0, 0);
 
     // Display the captured image
     const img = new Image();
-    img.src = imageDataUrl;
+    img.src = rgbCanvas.toDataURL('image/jpeg');
     uploadedImageDiv.innerHTML = ''; // Clear previous content
     uploadedImageDiv.appendChild(img);
-
     alert('Photo captured successfully!');
-    canvas.toBlob(blob => {
-        const file = new File([blob], 'capture.png', { type: 'image/png' });
+
+    rgbCanvas.toBlob(blob => {
+        const file = new File([blob], 'capture.jpeg', { type: 'image/jpeg' });
         const formData = new FormData();
         formData.append("file", file);
 
@@ -226,7 +242,7 @@ window.onload = function() {
         });
 
         closeCamera(document.getElementById('camera-overlay'));
-    });
+    }, 'image/jpeg');
   }
 
   // Close the camera and stop the video stream

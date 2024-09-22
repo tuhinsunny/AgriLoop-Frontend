@@ -11,7 +11,7 @@ const items = [
     { name: "Grapes", price: 20, supercoins: 10, image: "grape.png" },
 ];
 
-const API_ENDPOINT = "http://socially-evolving-elk.ngrok-free.app/predict";
+const API_ENDPOINT = "https://socially-evolving-elk.ngrok-free.app/predict";
 
 window.onload = function() {
   const cardsContainer = document.getElementById('cards-container');

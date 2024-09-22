@@ -1,14 +1,14 @@
 // Array of vegetables and fruits with details
 const items = [
-  { name: "Tomato", price: 10, supercoins: 5, image: "tomato.jpg" },
-  { name: "Potato", price: 8, supercoins: 4, image: "potato.jpg" },
-  { name: "Carrot", price: 12, supercoins: 6, image: "carrot.jpg" },
-  { name: "Cucumber", price: 9, supercoins: 4, image: "cucumber.jpg" },
-  { name: "Spinach", price: 15, supercoins: 7, image: "spinach.jpg" },
-  { name: "Onion", price: 7, supercoins: 3, image: "onion.jpg" },
-  { name: "Apple", price: 15, supercoins: 7, image: "apple.jpg" },
-  { name: "Banana", price: 5, supercoins: 2, image: "banana.jpg" },
-  { name: "Grapes", price: 20, supercoins: 10, image: "grapes.jpg" },
+    { name: "Tomato", price: 10, supercoins: 5, image: "tomatoes.png" },
+    { name: "Potato", price: 8, supercoins: 4, image: "basket-white-potatoes.png" },
+    { name: "Carrot", price: 12, supercoins: 6, image: "corrot.png" },
+    { name: "Cucumber", price: 9, supercoins: 4, image: "cucumber.png" },
+    { name: "Spinach", price: 15, supercoins: 7, image: "spinach.png" },
+    { name: "Onion", price: 7, supercoins: 3, image: "onion.png" },
+    { name: "Apple", price: 15, supercoins: 7, image: "apples.png" },
+    { name: "Banana", price: 5, supercoins: 2, image: "banana.png" },
+    { name: "Grapes", price: 20, supercoins: 10, image: "grape.png" },
 ];
 
 const API_ENDPOINT = "http://socially-evolving-elk.ngrok-free.app/predict";

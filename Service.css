@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background-color: #28a745;
+    background-color: #016a70;
     color: white;
     padding: 10px 20px;
 }
@@ -50,7 +50,7 @@ header {
 }
 
 .upload-button, .camera-button {
-    background-color: #28a745;
+    background-color: #016a70;
     color: white;
     padding: 10px 15px;
     border: none;
@@ -60,7 +60,7 @@ header {
 }
 
 .banner-section {
-    background-color: #28a745; /* Green color */
+    background-color: #016a70; /* Green color */
     padding: 20px;
     color: white;
     text-align: center;
@@ -167,4 +167,49 @@ footer {
     border: 2px solid #28a745;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Footer  */
+.footer {
+    background-color: rgb(239, 223, 223);
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.leftFooter,
+.rightFooter {
+    flex: 1;
+}
+
+.leftFooter {
+    padding-left: 300px;
+    padding-right: 50px;
+}
+
+
+.heading {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+
+
+.leftFooter h1{
+    margin-bottom: 10px;
+}
+
+.imp-info{
+    font-weight: bolder;
+}
+.leftFooter .copyright{
+    font-size: 16px;
+    margin-top: 15px;
+    font-weight: 800;
+}
+.rightFooter img{
+    height: 40vh;
+    width: 40vh;
 }

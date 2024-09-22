@@ -23,6 +23,12 @@ header {
     border: 1px solid #ddd;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: border-color 0.3s, box-shadow 0.3s;
+    width: 60vw;
+}
+.navbar button{
+    padding: 1rem;
+    border-radius: 50%;
+    border: none;
 }
 
 .search-bar:focus {
@@ -48,6 +54,7 @@ header {
     display: block;
     color: #666;
 }
+
 
 .upload-button, .camera-button {
     background-color: #016a70;

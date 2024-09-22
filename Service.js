@@ -70,7 +70,9 @@ window.onload = function() {
         })
           .then(response => response.json())
           .then(data => {
-            alert(`Prediction: ${data.prediction}\nConfidence: ${data.confidence}`);
+            const prediction = data.prediction;
+            const confidence = (data.confidence * 100).toFixed(2); // Convert to percentage and format to 2 decimal places
+            alert(`Prediction: ${prediction}\nConfidence: ${confidence}%`);
           })
           .catch(error => {
             console.error('Error:', error);

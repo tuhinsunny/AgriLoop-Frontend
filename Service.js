@@ -205,7 +205,28 @@ window.onload = function() {
     uploadedImageDiv.appendChild(img);
 
     alert('Photo captured successfully!');
-    closeCamera(document.getElementById('camera-overlay'));
+    canvas.toBlob(blob => {
+        const file = new File([blob], 'capture.png', { type: 'image/png' });
+        const formData = new FormData();
+        formData.append("file", file);
+
+        fetch(API_ENDPOINT, {
+            method: "POST",
+            body: formData,
+        })
+        .then(response => response.json())
+        .then(data => {
+            const prediction = data.prediction;
+            const confidence = (data.confidence * 100).toFixed(2);
+            alert(`Prediction: ${prediction}\nConfidence: ${confidence}%`);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Failed to get prediction.');
+        });
+
+        closeCamera(document.getElementById('camera-overlay'));
+    });
   }
 
   // Close the camera and stop the video stream

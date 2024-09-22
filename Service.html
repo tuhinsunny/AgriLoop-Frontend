@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriLoop: Buy with SuperCoins</title>
+    <link rel="stylesheet" href="Service.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h1>AgriLoop</h1>
+            <input type="text" class="search-bar" placeholder="Search for vegetables...">
+            <button class="search-button">🔍</button>
+        </nav>
+    </header>
+
+    <main>
+        <h2 style="background: linear-gradient(90deg, #4CAF50, #81C784); color: white; padding: 10px; border-radius: 5px;">Waste Segregation</h2>
+        <section class="upload-section">
+            <h2>Upload an Image</h2>
+            <div class="upload-container" id="upload-box">
+                <span class="upload-text">Drag & Drop Image Here</span>
+                <input type="file" id="file-upload" style="display: none;">
+                <button id="upload-button" class="upload-button">Upload Image</button>
+                <button id="camera-button" class="camera-button">📷 Open Camera</button>
+            </div>
+            <div class="uploaded-image" id="uploaded-image">
+                <!-- Image will be displayed here -->
+            </div>
+        </section>
+        
+
+        <section class="banner-section">
+            <div class="banner">
+                <h2>Buy Vegetables with SuperCoins</h2>
+                <p>Save more by using your SuperCoins! Earn points with every purchase and get fresh vegetables delivered to your doorstep.</p>
+                <p>Use <strong>SuperCoins</strong> to get great discounts and deals!</p>
+            </div>
+        </section>
+
+        <section class="cards-section">
+            <h2>Our Collection</h2>
+            <div id="cards-container" class="cards-container">
+                <!-- Vegetable and Fruit cards will be generated dynamically here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 AgriLoop. All Rights Reserved.</p>
+    </footer>
+
+    <script src="Service.js"></script>
+</body>
+</html>

@@ -5,6 +5,10 @@
 
 ---
 
+# Agriloop Backend 
+
+https://github.com/x0rzavi/AgriLoop-Backend
+
 ## 🌟 Features
 
 - **🛒 Marketplace Integration*: Connects farmers directly with consumers, enabling the sale of fresh produce without intermediaris.
@@ -81,13 +85,7 @@ Experience the application live: [AgriLoop Live Demo](https://agriloop-devsquad.
 
 ---
 
-## 👨‍💻 Cntributors
 
-| Name           | GitHub Profile                      |
-|----------------|-------------------------------------|
-| Tuhin Sunny    | [tuhinsunny](https://github.com/uhinsunny) |
-
----
 
 # 📄 License
 
